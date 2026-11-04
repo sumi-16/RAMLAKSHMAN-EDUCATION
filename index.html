@@ -30,7 +30,7 @@
 const SUPABASE_URL="gnjhtqnyvavcuxecpliq";
 const SUPABASE_ANON_KEY="sb_publishable_aJf_nQ6caLGtN0ITLn4Vlg_Q6yFUtmS";
 const configured=SUPABASE_URL.startsWith("https://")&&!SUPABASE_ANON_KEY.includes("PASTE_");
-const db=configured?window.supabase.createClient(gnjhtqnyvavcuxecpliq,sb_publishable_aJf_nQ6caLGtN0ITLn4Vlg_Q6yFUtmS):null;
+const db=configured?window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY):null;
 const $=id=>document.getElementById(id),esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 let posts=[],quizzes=[],pdfs=[],saved=JSON.parse(localStorage.getItem("rle_saved")||"[]"),session=null;
 function tab(id){document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x.id===id));document.querySelectorAll("[data-tab]").forEach(x=>x.classList.toggle("active",x.dataset.tab===id));if(id==="admin")refreshAuth();window.scrollTo(0,0)}
